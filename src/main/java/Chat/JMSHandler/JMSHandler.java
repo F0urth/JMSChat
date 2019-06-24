@@ -6,5 +6,4 @@ package Chat.JMSHandler;
 public
     class JMSHandler {
 
-
 }
