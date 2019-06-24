@@ -12,7 +12,7 @@ public
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("Views/MainFrame.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/Views/MainFrame.fxml"));
         primaryStage.setTitle("Chat");
         primaryStage.setScene(new Scene(root, 600, 600));
         primaryStage.show();
