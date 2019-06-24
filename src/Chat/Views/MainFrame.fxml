@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<GridPane alignment="center" hgap="20" prefHeight="600.0" prefWidth="600.0" vgap="20" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Chat.Controllers.MainController">
+   <children>
+      <TextArea fx:id="chatArea" editable="false" prefHeight="412.0" prefWidth="429.0" GridPane.rowIndex="1" />
+      <TextArea fx:id="messageArea" prefHeight="85.0" prefWidth="460.0" promptText="Type message" GridPane.rowIndex="3" />
+      <Button mnemonicParsing="false" onAction="#sendAction" prefHeight="28.0" prefWidth="99.0" text="Send" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+      <Label text="Chat:" />
+      <Label text="Your message:" GridPane.rowIndex="2" />
+   </children>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints />
+      <RowConstraints minHeight="10.0" prefHeight="30.0" />
+   </rowConstraints>
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints minWidth="10.0" prefWidth="100.0" />
+   </columnConstraints>
+</GridPane>
