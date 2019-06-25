@@ -6,6 +6,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * @author F0urth
+ */
+
 public
     class MainApp
         extends Application {
@@ -20,7 +24,6 @@ public
 
 
     public static void main(String[] args) {
-
         launch(args);
     }
 }

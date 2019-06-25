@@ -12,14 +12,25 @@ import rx.Observable;
 public
     class JMSHandler {
 
-    private DefaultCamelContext camelContext;
+    private static final String TOPICURI;
+
+    static {
+        TOPICURI = "activemq:topic:chat";
+    }
+
     private ReactiveCamel reactiveCamel;
 
 
-    public Observable<Message> getObservableOf() {
+    public Observable<Message> getObservableOfJMS() {
         return reactiveCamel
-            .toObservable("activemq:topic:JMSChat");
+
+            .toObservable(TOPICURI);
     }
+
+    public void sendTo(Observable<String> messages) {
+        reactiveCamel.sendTo(messages, TOPICURI);
+    }
+
 
     /**
      * Factory method
@@ -30,7 +41,7 @@ public
     }
 
     private JMSHandler() {
-        this.camelContext = new DefaultCamelContext();
-        this.reactiveCamel = new ReactiveCamel(this.camelContext);
+        this.reactiveCamel = new ReactiveCamel(
+            new DefaultCamelContext());
     }
 }
