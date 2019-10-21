@@ -9,33 +9,21 @@ import rx.Observable;
 /**
  * @author F0urth
  */
-public
-    class JMSHandler {
+public class JMSHandler {
 
-    private static final String TOPICURI;
-
-    static {
-        TOPICURI = "activemq:topic:chat";
-    }
+    private static final String TOPICURI = "activemq:topic:chat";
 
     private ReactiveCamel reactiveCamel;
 
 
     public Observable<Message> getObservableOfJMS() {
-        return reactiveCamel
-
-            .toObservable(TOPICURI);
+        return reactiveCamel.toObservable(TOPICURI);
     }
 
     public void sendTo(Observable<String> messages) {
         reactiveCamel.sendTo(messages, TOPICURI);
     }
 
-
-    /**
-     * Factory method
-     * @return new Instance
-     */
     public static JMSHandler newInstance() {
         return new JMSHandler();
     }
